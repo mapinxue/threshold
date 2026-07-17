@@ -1,0 +1,57 @@
+[project]
+name = "threshold-api"
+version = "0.1.0"
+description = "Governed database access API for AI agents"
+readme = "README.md"
+requires-python = ">=3.13,<3.14"
+dependencies = [
+    "fastapi>=0.116.0,<1.0.0",
+    "pydantic-settings>=2.10.0,<3.0.0",
+    "sqlglot>=27.0.0,<30.0.0",
+    "uvicorn[standard]>=0.35.0,<1.0.0",
+]
+
+[dependency-groups]
+dev = [
+    "httpx2>=2.7.0,<3.0.0",
+    "pyright>=1.1.400,<2.0.0",
+    "pytest>=8.4.0,<10.0.0",
+    "pytest-asyncio>=1.1.0,<2.0.0",
+    "ruff>=0.12.0,<1.0.0",
+]
+
+[[tool.uv.index]]
+name = "tsinghua"
+url = "https://pypi.tuna.tsinghua.edu.cn/simple"
+default = true
+
+[tool.uv]
+package = false
+
+[tool.pyright]
+include = ["app", "tests"]
+exclude = [".venv"]
+pythonVersion = "3.13"
+typeCheckingMode = "strict"
+reportMissingTypeStubs = false
+venvPath = "."
+venv = ".venv"
+
+[tool.ruff]
+target-version = "py313"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["ASYNC", "B", "E", "F", "I", "RUF", "S", "SIM", "UP"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**/*.py" = ["S101"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+line-ending = "lf"
+
+[tool.pytest.ini_options]
+addopts = ["-q", "--strict-config", "--strict-markers"]
+testpaths = ["tests"]
