@@ -1,0 +1,51 @@
+{
+  "name": "threshold",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "pnpm@10.32.1",
+  "engines": {
+    "node": ">=22.0.0",
+    "pnpm": ">=10.0.0"
+  },
+  "scripts": {
+    "setup": "pnpm install && pnpm setup:api",
+    "setup:api": "cd apps/api && uv sync --all-groups",
+    "dev": "concurrently --kill-others --names web,api --prefix-colors blue,green \"pnpm dev:web\" \"pnpm dev:api\"",
+    "dev:web": "pnpm --dir apps/web dev",
+    "dev:api": "cd apps/api && uv run uvicorn app.main:app --reload",
+    "db:up": "docker compose up -d --wait postgres",
+    "db:down": "docker compose down",
+    "db:logs": "docker compose logs -f postgres",
+    "db:shell": "docker compose exec postgres sh -c 'psql -U \"$POSTGRES_USER\" -d \"$POSTGRES_DB\"'",
+    "db:migrate": "cd apps/api && uv run alembic upgrade head",
+    "db:current": "cd apps/api && uv run alembic current",
+    "db:revision": "cd apps/api && uv run alembic revision --autogenerate",
+    "db:init": "pnpm db:up && pnpm db:migrate",
+    "build": "pnpm build:web",
+    "build:web": "pnpm --dir apps/web build",
+    "typecheck": "pnpm typecheck:web && pnpm typecheck:api",
+    "typecheck:web": "pnpm --dir apps/web typecheck",
+    "typecheck:api": "cd apps/api && uv run pyright",
+    "lint": "pnpm lint:web && pnpm lint:api",
+    "lint:web": "pnpm --dir apps/web lint",
+    "lint:api": "cd apps/api && uv run ruff check .",
+    "lint:fix": "pnpm lint:fix:web && pnpm lint:fix:api",
+    "lint:fix:web": "pnpm --dir apps/web lint:fix",
+    "lint:fix:api": "cd apps/api && uv run ruff check --fix .",
+    "format": "pnpm format:root && pnpm format:web && pnpm format:api",
+    "format:root": "prettier --write '*.{json,md,yaml,yml}'",
+    "format:web": "pnpm --dir apps/web format",
+    "format:api": "cd apps/api && uv run ruff format .",
+    "format:check": "pnpm format:check:root && pnpm format:check:web && pnpm format:check:api",
+    "format:check:root": "prettier --check '*.{json,md,yaml,yml}'",
+    "format:check:web": "pnpm --dir apps/web format:check",
+    "format:check:api": "cd apps/api && uv run ruff format --check .",
+    "test": "pnpm test:api",
+    "test:api": "cd apps/api && uv run pytest",
+    "check": "pnpm typecheck && pnpm lint && pnpm format:check && pnpm test"
+  },
+  "devDependencies": {
+    "concurrently": "^10.0.3",
+    "prettier": "^3.9.5"
+  }
+}

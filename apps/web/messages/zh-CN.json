@@ -1,0 +1,191 @@
+{
+  "Metadata": {
+    "title": "Threshold",
+    "description": "面向 AI Agent 的受治理数据库访问层"
+  },
+  "Common": {
+    "brand": "Threshold",
+    "language": "切换语言",
+    "languages": {
+      "zh-CN": "中文",
+      "en": "English"
+    },
+    "theme": {
+      "toggle": "切换显示模式",
+      "light": "浅色",
+      "dark": "深色",
+      "system": "跟随系统"
+    }
+  },
+  "Landing": {
+    "status": "基础能力已就绪",
+    "eyebrow": "AI 数据库安全网关",
+    "title": "让 Agent 使用数据，而不是不受限制地访问数据库。",
+    "description": "Threshold 位于 AI Agent 与生产数据之间，统一执行权限校验、SQL 安全检查、数据脱敏、查询限制和完整审计。",
+    "enterConsole": "进入功能页面",
+    "apiDocs": "查看 API 文档",
+    "capabilitiesLabel": "核心能力",
+    "capabilities": {
+      "policy": {
+        "title": "策略优先",
+        "description": "对每个 Agent、数据源、表、字段和查询目的进行授权。"
+      },
+      "execution": {
+        "title": "安全执行",
+        "description": "SQL 在到达数据库之前会被解析、校验、重写、限流并记录。"
+      },
+      "results": {
+        "title": "结果保护",
+        "description": "识别敏感数据，并在结果离开网关之前强制执行脱敏策略。"
+      }
+    }
+  },
+  "Console": {
+    "product": "功能控制台",
+    "overview": "概览",
+    "landing": "返回落地页",
+    "environment": "开发环境",
+    "title": "数据访问概览",
+    "description": "管理数据源、字段分类和 Agent 访问策略。",
+    "addSource": "添加数据源",
+    "metrics": {
+      "sources": "数据源",
+      "protectedFields": "受保护字段",
+      "policies": "生效策略",
+      "queries": "今日查询"
+    },
+    "tabs": {
+      "sources": "数据源",
+      "activity": "最近活动"
+    },
+    "table": {
+      "name": "数据源",
+      "engine": "引擎",
+      "classification": "分类",
+      "status": "状态",
+      "productionAnalytics": "生产分析库",
+      "customerSupport": "客户支持库",
+      "confidential": "机密",
+      "restricted": "受限",
+      "connected": "已连接",
+      "review": "待审核"
+    },
+    "activity": {
+      "title": "审计事件将在这里展示",
+      "description": "接入查询执行链路后，这里会显示策略决策和查询结果。"
+    },
+    "dialog": {
+      "title": "添加数据源",
+      "description": "先创建连接草稿，凭据稍后通过密钥管理服务保存。",
+      "name": "显示名称",
+      "namePlaceholder": "例如：生产分析库",
+      "engine": "数据库引擎",
+      "cancel": "取消",
+      "continue": "继续"
+    }
+  },
+  "App": {
+    "title": "Threshold 管理控制台",
+    "description": "用户、数据源、API Key、权限和 Agent 技能的最小可运行管理面板。",
+    "auth": {
+      "title": "进入 Threshold",
+      "description": "登录现有账号，或创建一个新租户和首个管理员。",
+      "login": "登录",
+      "register": "注册",
+      "success": "认证成功"
+    },
+    "roles": { "admin": "管理员", "user": "普通用户" },
+    "metrics": {
+      "users": "用户",
+      "sources": "数据源",
+      "keys": "我的 API Key",
+      "permissions": "权限",
+      "skills": "技能"
+    },
+    "tabs": {
+      "sources": "数据源",
+      "keys": "API Key",
+      "skills": "技能",
+      "profile": "个人信息",
+      "users": "用户管理",
+      "permissions": "权限管理"
+    },
+    "fields": {
+      "tenant": "组织名称",
+      "name": "名称",
+      "email": "邮箱",
+      "password": "密码",
+      "engine": "数据库引擎",
+      "host": "主机",
+      "port": "端口",
+      "database": "数据库名",
+      "owner": "所属用户",
+      "status": "状态",
+      "created": "创建时间",
+      "role": "角色",
+      "user": "用户",
+      "source": "数据源",
+      "access": "访问级别"
+    },
+    "actions": {
+      "actions": "操作",
+      "working": "处理中…",
+      "loading": "正在刷新",
+      "create": "创建",
+      "save": "保存",
+      "delete": "删除",
+      "disable": "停用",
+      "enable": "启用",
+      "grant": "授权",
+      "logout": "退出登录"
+    },
+    "sources": {
+      "title": "数据源",
+      "description": "普通用户只能看到自己拥有或已获授权的数据源。",
+      "add": "添加数据源",
+      "addDescription": "这里只保存连接元数据，暂不连接真实业务数据库。"
+    },
+    "keys": {
+      "title": "API Key",
+      "description": "供 Agent 调用 Threshold 接口时认证。",
+      "add": "创建 API Key",
+      "warning": "密钥只会完整显示一次。",
+      "copyNow": "请立即复制这个密钥",
+      "prefix": "密钥前缀"
+    },
+    "skills": {
+      "title": "Agent 技能",
+      "description": "根据数据源生成一份可交付给 Agent 的技能占位内容。",
+      "generate": "生成技能"
+    },
+    "profile": { "title": "我的信息" },
+    "users": {
+      "title": "用户管理",
+      "description": "新建、停用或删除当前租户下的用户。",
+      "add": "新建用户",
+      "addDescription": "创建后用户可直接使用邮箱和初始密码登录。"
+    },
+    "permissions": {
+      "title": "权限管理",
+      "description": "为用户授予指定数据源的访问级别。"
+    },
+    "empty": {
+      "sources": "暂无数据源",
+      "keys": "暂无 API Key",
+      "skills": "暂无技能，请先添加数据源。",
+      "users": "暂无用户",
+      "permissions": "暂无权限"
+    },
+    "messages": {
+      "sourceCreated": "数据源已创建",
+      "keyCreated": "API Key 已创建",
+      "userCreated": "用户已创建",
+      "userUpdated": "用户状态已更新",
+      "permissionCreated": "权限已创建",
+      "profileUpdated": "个人信息已更新",
+      "skillGenerated": "技能已生成",
+      "deleted": "已删除"
+    },
+    "errors": { "generic": "操作失败，请稍后重试" }
+  }
+}
