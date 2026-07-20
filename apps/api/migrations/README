@@ -1,0 +1,9 @@
+Threshold control-plane database migrations.
+
+Create a migration after changing SQLAlchemy models:
+
+    uv run alembic revision --autogenerate -m "describe the change"
+
+Apply all migrations:
+
+    uv run alembic upgrade head
