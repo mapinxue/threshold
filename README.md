@@ -33,6 +33,7 @@ Copy the local environment template if you need to override defaults:
 
 ```bash
 cp apps/api/.env.example apps/api/.env
+cp apps/web/.env.example apps/web/.env.local
 ```
 
 Start PostgreSQL and apply all database migrations:
@@ -62,6 +63,20 @@ The services are available at:
 - OpenAPI: http://localhost:8000/docs
 - API liveness: http://localhost:8000/api/v1/health
 - API readiness (including PostgreSQL): http://localhost:8000/api/v1/health/ready
+
+The console now uses the API directly. Registering creates a tenant and its
+first administrator. From there the working vertical slice includes:
+
+- sign in, registration, profile updates, and database-backed sessions
+- user creation, disabling, and deletion for administrators
+- data source creation, updates, deletion, and user-scoped visibility
+- API key creation and deletion (the secret is shown once)
+- per-user data source permissions
+- placeholder agent skill generation from a data source
+
+This is intentionally an application skeleton: data source records are
+connection metadata only, generated skills are placeholders, and the governed
+query execution path is not connected yet.
 
 They can also be run independently:
 

@@ -83,5 +83,109 @@
       "cancel": "Cancel",
       "continue": "Continue"
     }
+  },
+  "App": {
+    "title": "Threshold management console",
+    "description": "A minimal working console for users, data sources, API keys, permissions, and agent skills.",
+    "auth": {
+      "title": "Enter Threshold",
+      "description": "Sign in, or create a tenant with its first administrator.",
+      "login": "Sign in",
+      "register": "Register",
+      "success": "Authentication successful"
+    },
+    "roles": { "admin": "Administrator", "user": "User" },
+    "metrics": {
+      "users": "Users",
+      "sources": "Data sources",
+      "keys": "My API keys",
+      "permissions": "Permissions",
+      "skills": "Skills"
+    },
+    "tabs": {
+      "sources": "Data sources",
+      "keys": "API keys",
+      "skills": "Skills",
+      "profile": "Profile",
+      "users": "Users",
+      "permissions": "Permissions"
+    },
+    "fields": {
+      "tenant": "Organization",
+      "name": "Name",
+      "email": "Email",
+      "password": "Password",
+      "engine": "Database engine",
+      "host": "Host",
+      "port": "Port",
+      "database": "Database name",
+      "owner": "Owner",
+      "status": "Status",
+      "created": "Created",
+      "role": "Role",
+      "user": "User",
+      "source": "Data source",
+      "access": "Access level"
+    },
+    "actions": {
+      "actions": "Actions",
+      "working": "Working…",
+      "loading": "Refreshing",
+      "create": "Create",
+      "save": "Save",
+      "delete": "Delete",
+      "disable": "Disable",
+      "enable": "Enable",
+      "grant": "Grant",
+      "logout": "Sign out"
+    },
+    "sources": {
+      "title": "Data sources",
+      "description": "Users only see sources that they own or have permission to access.",
+      "add": "Add data source",
+      "addDescription": "This stores connection metadata only; no business database is contacted yet."
+    },
+    "keys": {
+      "title": "API keys",
+      "description": "Authenticate agents calling the Threshold API.",
+      "add": "Create API key",
+      "warning": "The complete secret is shown only once.",
+      "copyNow": "Copy this secret now",
+      "prefix": "Key prefix"
+    },
+    "skills": {
+      "title": "Agent skills",
+      "description": "Generate placeholder skill content from a data source for an agent.",
+      "generate": "Generate skill"
+    },
+    "profile": { "title": "My profile" },
+    "users": {
+      "title": "User management",
+      "description": "Create, disable, or delete users in this tenant.",
+      "add": "Create user",
+      "addDescription": "The user can sign in with this email and initial password."
+    },
+    "permissions": {
+      "title": "Permission management",
+      "description": "Grant a user an access level on a data source."
+    },
+    "empty": {
+      "sources": "No data sources",
+      "keys": "No API keys",
+      "skills": "No skills. Add a data source first.",
+      "users": "No users",
+      "permissions": "No permissions"
+    },
+    "messages": {
+      "sourceCreated": "Data source created",
+      "keyCreated": "API key created",
+      "userCreated": "User created",
+      "userUpdated": "User status updated",
+      "permissionCreated": "Permission created",
+      "profileUpdated": "Profile updated",
+      "skillGenerated": "Skill generated",
+      "deleted": "Deleted"
+    },
+    "errors": { "generic": "The operation failed. Please try again." }
   }
 }
