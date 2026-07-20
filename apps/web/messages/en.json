@@ -1,0 +1,87 @@
+{
+  "Metadata": {
+    "title": "Threshold",
+    "description": "Governed database access for AI agents"
+  },
+  "Common": {
+    "brand": "Threshold",
+    "language": "Change language",
+    "languages": {
+      "zh-CN": "中文",
+      "en": "English"
+    },
+    "theme": {
+      "toggle": "Change appearance",
+      "light": "Light",
+      "dark": "Dark",
+      "system": "System"
+    }
+  },
+  "Landing": {
+    "status": "Foundation ready",
+    "eyebrow": "AI database security gateway",
+    "title": "Give agents access to data, not unrestricted databases.",
+    "description": "Threshold sits between AI agents and production data to enforce authorization, SQL safety, masking, query limits, and complete auditability.",
+    "enterConsole": "Enter the console",
+    "apiDocs": "Open API docs",
+    "capabilitiesLabel": "Core capabilities",
+    "capabilities": {
+      "policy": {
+        "title": "Policy first",
+        "description": "Authorize every agent, data source, table, column, and query purpose."
+      },
+      "execution": {
+        "title": "Safe execution",
+        "description": "Parse, validate, rewrite, limit, and audit SQL before database execution."
+      },
+      "results": {
+        "title": "Protected results",
+        "description": "Classify sensitive data and enforce masking before results leave the gateway."
+      }
+    }
+  },
+  "Console": {
+    "product": "Product console",
+    "overview": "Overview",
+    "landing": "Back to landing page",
+    "environment": "Development",
+    "title": "Data access overview",
+    "description": "Manage data sources, field classifications, and agent access policies.",
+    "addSource": "Add data source",
+    "metrics": {
+      "sources": "Data sources",
+      "protectedFields": "Protected fields",
+      "policies": "Active policies",
+      "queries": "Queries today"
+    },
+    "tabs": {
+      "sources": "Data sources",
+      "activity": "Recent activity"
+    },
+    "table": {
+      "name": "Data source",
+      "engine": "Engine",
+      "classification": "Classification",
+      "status": "Status",
+      "productionAnalytics": "Production analytics",
+      "customerSupport": "Customer support",
+      "confidential": "Confidential",
+      "restricted": "Restricted",
+      "connected": "Connected",
+      "review": "Review"
+    },
+    "activity": {
+      "title": "Audit events will appear here",
+      "description": "Policy decisions and query outcomes will be shown after execution is connected."
+    },
+    "dialog": {
+      "title": "Add data source",
+      "description": "Create a connection draft now. Credentials will be stored through a secrets provider later.",
+      "name": "Display name",
+      "namePlaceholder": "e.g. Production analytics",
+      "engine": "Database engine",
+      "cancel": "Cancel",
+      "continue": "Continue"
+    }
+  }
+}

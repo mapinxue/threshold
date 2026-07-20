@@ -1,29 +1,40 @@
 import { ArrowRightIcon, DatabaseZapIcon, ShieldCheckIcon, ScanSearchIcon } from "lucide-react";
-import Link from "next/link";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 
+import { SiteControls } from "@/components/site-controls";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Link } from "@/i18n/navigation";
+import type { AppLocale } from "@/i18n/routing";
 
-const capabilities = [
-  {
-    title: "Policy first",
-    description: "Authorize every agent, data source, table, column, and query purpose.",
-    icon: ShieldCheckIcon,
-  },
-  {
-    title: "Safe execution",
-    description: "Parse, validate, rewrite, limit, and audit SQL before database execution.",
-    icon: ScanSearchIcon,
-  },
-  {
-    title: "Protected results",
-    description: "Classify sensitive data and enforce masking before results leave the gateway.",
-    icon: DatabaseZapIcon,
-  },
-] as const;
+type LandingPageProps = {
+  params: Promise<{ locale: AppLocale }>;
+};
 
-export default function Home() {
+export default async function LandingPage({ params }: LandingPageProps) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+  const t = await getTranslations("Landing");
+
+  const capabilities = [
+    {
+      title: t("capabilities.policy.title"),
+      description: t("capabilities.policy.description"),
+      icon: ShieldCheckIcon,
+    },
+    {
+      title: t("capabilities.execution.title"),
+      description: t("capabilities.execution.description"),
+      icon: ScanSearchIcon,
+    },
+    {
+      title: t("capabilities.results.title"),
+      description: t("capabilities.results.description"),
+      icon: DatabaseZapIcon,
+    },
+  ];
+
   return (
     <main className="mx-auto min-h-screen max-w-7xl px-6 pb-16 lg:px-8">
       <nav className="flex h-20 items-center justify-between border-b">
@@ -33,35 +44,38 @@ export default function Home() {
           </span>
           Threshold
         </Link>
-        <Badge variant="outline" className="gap-1.5">
-          <span className="size-1.5 rounded-full bg-emerald-500" />
-          Foundation ready
-        </Badge>
+        <div className="flex items-center gap-3">
+          <Badge variant="outline" className="hidden gap-1.5 sm:flex">
+            <span className="size-1.5 rounded-full bg-emerald-500" />
+            {t("status")}
+          </Badge>
+          <SiteControls />
+        </div>
       </nav>
 
       <section className="py-24 sm:py-32">
-        <Badge variant="secondary">AI database security gateway</Badge>
+        <Badge variant="secondary">{t("eyebrow")}</Badge>
         <h1 className="mt-6 max-w-5xl text-5xl font-semibold tracking-[-0.05em] text-balance sm:text-7xl lg:text-8xl">
-          Give agents access to data, not unrestricted databases.
+          {t("title")}
         </h1>
-        <p className="mt-8 max-w-2xl text-lg leading-8 text-muted-foreground">
-          Threshold is the governed layer between AI agents and production data: permissions, SQL
-          safety, masking, execution limits, and complete auditability.
-        </p>
+        <p className="mt-8 max-w-2xl text-lg leading-8 text-muted-foreground">{t("description")}</p>
         <div className="mt-10 flex flex-wrap gap-3">
           <Button size="lg" asChild>
-            <a href="http://localhost:8000/docs">
-              Open API documentation
+            <Link href="/console">
+              {t("enterConsole")}
               <ArrowRightIcon data-icon="inline-end" />
-            </a>
+            </Link>
           </Button>
           <Button size="lg" variant="outline" asChild>
-            <Link href="/ui">View UI workbench</Link>
+            <a href="http://localhost:8000/docs">{t("apiDocs")}</a>
           </Button>
         </div>
       </section>
 
-      <section className="grid gap-4 border-t pt-8 md:grid-cols-3" aria-label="Core capabilities">
+      <section
+        className="grid gap-4 border-t pt-8 md:grid-cols-3"
+        aria-label={t("capabilitiesLabel")}
+      >
         {capabilities.map((capability) => {
           const Icon = capability.icon;
 

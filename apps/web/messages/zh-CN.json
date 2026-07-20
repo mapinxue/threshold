@@ -1,0 +1,87 @@
+{
+  "Metadata": {
+    "title": "Threshold",
+    "description": "面向 AI Agent 的受治理数据库访问层"
+  },
+  "Common": {
+    "brand": "Threshold",
+    "language": "切换语言",
+    "languages": {
+      "zh-CN": "中文",
+      "en": "English"
+    },
+    "theme": {
+      "toggle": "切换显示模式",
+      "light": "浅色",
+      "dark": "深色",
+      "system": "跟随系统"
+    }
+  },
+  "Landing": {
+    "status": "基础能力已就绪",
+    "eyebrow": "AI 数据库安全网关",
+    "title": "让 Agent 使用数据，而不是不受限制地访问数据库。",
+    "description": "Threshold 位于 AI Agent 与生产数据之间，统一执行权限校验、SQL 安全检查、数据脱敏、查询限制和完整审计。",
+    "enterConsole": "进入功能页面",
+    "apiDocs": "查看 API 文档",
+    "capabilitiesLabel": "核心能力",
+    "capabilities": {
+      "policy": {
+        "title": "策略优先",
+        "description": "对每个 Agent、数据源、表、字段和查询目的进行授权。"
+      },
+      "execution": {
+        "title": "安全执行",
+        "description": "SQL 在到达数据库之前会被解析、校验、重写、限流并记录。"
+      },
+      "results": {
+        "title": "结果保护",
+        "description": "识别敏感数据，并在结果离开网关之前强制执行脱敏策略。"
+      }
+    }
+  },
+  "Console": {
+    "product": "功能控制台",
+    "overview": "概览",
+    "landing": "返回落地页",
+    "environment": "开发环境",
+    "title": "数据访问概览",
+    "description": "管理数据源、字段分类和 Agent 访问策略。",
+    "addSource": "添加数据源",
+    "metrics": {
+      "sources": "数据源",
+      "protectedFields": "受保护字段",
+      "policies": "生效策略",
+      "queries": "今日查询"
+    },
+    "tabs": {
+      "sources": "数据源",
+      "activity": "最近活动"
+    },
+    "table": {
+      "name": "数据源",
+      "engine": "引擎",
+      "classification": "分类",
+      "status": "状态",
+      "productionAnalytics": "生产分析库",
+      "customerSupport": "客户支持库",
+      "confidential": "机密",
+      "restricted": "受限",
+      "connected": "已连接",
+      "review": "待审核"
+    },
+    "activity": {
+      "title": "审计事件将在这里展示",
+      "description": "接入查询执行链路后，这里会显示策略决策和查询结果。"
+    },
+    "dialog": {
+      "title": "添加数据源",
+      "description": "先创建连接草稿，凭据稍后通过密钥管理服务保存。",
+      "name": "显示名称",
+      "namePlaceholder": "例如：生产分析库",
+      "engine": "数据库引擎",
+      "cancel": "取消",
+      "continue": "继续"
+    }
+  }
+}

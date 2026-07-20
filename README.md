@@ -6,6 +6,7 @@ Threshold is a governed database gateway for AI agents. It sits between agents a
 
 - Web: Next.js, React, TypeScript, Tailwind CSS
 - UI: shadcn/ui with Radix primitives and the Nova preset
+- Internationalization: next-intl with Chinese and English locale routes
 - API: FastAPI, Pydantic, Python managed by uv
 - SQL policy foundation: SQLGlot
 - Frontend quality: TypeScript, ESLint, Prettier
@@ -42,8 +43,10 @@ pnpm dev
 
 The services are available at:
 
-- Web: http://localhost:3000
-- UI workbench: http://localhost:3000/ui
+- Web: http://localhost:3000 (redirects to the negotiated locale)
+- Chinese landing page: http://localhost:3000/zh-CN
+- Chinese console: http://localhost:3000/zh-CN/console
+- English console: http://localhost:3000/en/console
 - API: http://localhost:8000
 - OpenAPI: http://localhost:8000/docs
 
@@ -95,7 +98,7 @@ cd apps/web
 pnpm dlx shadcn@latest add <component>
 ```
 
-The shared component source lives in `apps/web/src/components/ui`. Forms use the current shadcn `Field` composition with React Hook Form and Zod; data tables use TanStack Table with the shared table primitives.
+The shared component source lives in `apps/web/src/components/ui`. Forms use the current shadcn `Field` composition with React Hook Form and Zod; data tables use TanStack Table with the shared table primitives. Theme selection is provided by `next-themes`, while locale routing and message loading are handled by `next-intl`.
 
 ## Repository layout
 
